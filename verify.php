@@ -1,7 +1,8 @@
+<?php
 $proxy = 'velodrome.usefixie.com:80';
+
 $proxyauth = 'fixie:DVHb9WmDvqT8YCv';
 
-<?php
 $access_token = '5s3beWIw+vG+G1W0C4svPIUEN//gmACmJKSTVhI9N2ieM9bqMNYdVKY2bLWumtoofFFcHdU7c9L4bVlXZmZuqlF8H9RQQLwIHn3J+rrdwIqjY8b/LyBg98tLI5PpcICcmwYknf+LaxUVGTOTPfyphgdB04t89/1O/w1cDnyilFU=';
 
 $url = 'https://api.line.me/v1/oauth/verify';
