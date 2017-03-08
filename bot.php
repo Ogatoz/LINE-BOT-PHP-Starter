@@ -41,8 +41,6 @@ if (!is_null($events['events']))
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			if($event['message']['text'] == "รูป")
-				$url = https://guarded-inlet-22300.herokuapp.com/logo-transparent.png;
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
