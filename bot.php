@@ -33,8 +33,8 @@ if (!is_null($events['events']))
 			elseif($event['message']['text'] == "รูป")
 			$messages = [
 				'text' => 'sticker',
-				'packageId' => '1',
-				'stickerId' => '1'
+				'packageId' => '4',
+				'stickerId' => '300'
 			];
 			else
 			$messages = [
