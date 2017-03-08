@@ -29,6 +29,10 @@ if (!is_null($events['events']))
 				'type' => 'text',
 				'text' => 'Hi'
 			];
+			elseif($event['message']['text'] == "รูป")
+			$messages = [
+				'type' => 'image',
+			];
 			else
 			$messages = [
 				'type' => 'text',
