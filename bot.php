@@ -1,4 +1,21 @@
 <?php
+
+function postMessage($access_token,$data,$url)
+{
+	$post = json_encode($data);
+	$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	curl_setopt($ch, CURLOPT_PROXY, $proxy);
+	curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
+	$result = curl_exec($ch);
+	curl_close($ch);
+}
+
 $proxy = 'velodrome.usefixie.com:80';
 
 $proxyauth = 'fixie:DVHb9WmDvqT8YCv';
@@ -31,7 +48,9 @@ if (!is_null($events['events']))
 			];
 			elseif($event['message']['text'] == "รูป")
 			$messages = [
-				'type' => 'image',
+				'text' => 'sticker',
+				'packageID' => '4',
+				'stickerID' => '300'
 			];
 			else
 			$messages = [
@@ -45,21 +64,7 @@ if (!is_null($events['events']))
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			curl_setopt($ch, CURLOPT_PROXY, $proxy);
-			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
+			postMessage($access_token,$data,$url);
 		}
 	}
 }
