@@ -32,7 +32,7 @@ if (!is_null($events['events']))
 			else
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => 'Invalid Input'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
