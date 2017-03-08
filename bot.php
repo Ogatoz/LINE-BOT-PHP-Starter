@@ -24,6 +24,12 @@ if (!is_null($events['events']))
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+			if($event['message']['text'] == "สวัสดี")
+			$messages = [
+				'type' => 'text',
+				'text' => 'Hi'
+			];
+			else
 			$messages = [
 				'type' => 'text',
 				'text' => $text
