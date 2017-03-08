@@ -32,9 +32,9 @@ if (!is_null($events['events']))
 			];
 			elseif($event['message']['text'] == "รูป")
 			$messages = [
-				'text' => 'sticker',
-				'packageId' => '4',
-				'stickerId' => '300'
+				'type' => 'image',
+ 				'originalContentUrl' => 'https://guarded-inlet-22300.herokuapp.com/1.jpg',
+   				'previewImageUrl' => 'https://guarded-inlet-22300.herokuapp.com/2.jpg'
 			];
 			else
 			$messages = [
