@@ -14,6 +14,8 @@ function postMessage($access_token,$data,$url)
 	curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 	$result = curl_exec($ch);
 	curl_close($ch);
+	
+	echo &result."\r\n";
 }
 
 $proxy = 'velodrome.usefixie.com:80';
